@@ -14,30 +14,30 @@ I used Deep Deterministic Policy Gradients (DDPG) as underlying learning algorit
 Below are the hyper parameters which are used in this project:
  <p>
 
-BUFFER_SIZE = int(1e5)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# replay buffer size
-BATCH_SIZE = 128       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# minibatch size
-GAMMA = 0.99            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# discount factor
-TAU = 1e-3              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# for soft update of target parameters
-LR_ACTOR = 1e-4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# learning rate of the actor 
-LR_CRITIC = 1e-4       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# learning rate of the critic
-WEIGHT_DECAY = 0        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# L2 weight decay 
+BUFFER_SIZE = int(1e5)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# replay buffer size <br/>
+BATCH_SIZE = 128       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# minibatch size<br/>
+GAMMA = 0.99            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# discount factor<br/>
+TAU = 1e-3              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# for soft update of target parameters<br/>
+LR_ACTOR = 1e-4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# learning rate of the actor <br/>
+LR_CRITIC = 1e-4       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# learning rate of the critic<br/>
+WEIGHT_DECAY = 0        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# L2 weight decay <br/>
 </p>
 
 ### Architecture of Neural Network Used:
 
 The actor netowrk has three layers: 
+<br/>
+— First layer : input size = 33 and output size = 128 <br/>
+— Second layer : input size = 128 and output size = 128<br/>
+— Third layer : input size = 128 and output size = 4<br/>
+<br/>
 
-— First layer : input size = 33 and output size = 128
-— Second layer : input size = 128 and output size = 128
-— Third layer : input size = 128 and output size = 4
-
-
-The critic network has following layers:
-
-— First layer : input size = 33 and output size = 128
-— Second layer : input size = 134 and output size = 128
-— Third layer : input size = 128 and output size = 1
-
+The critic network has following layers:<br/>
+<br/>
+— First layer : input size = 33 and output size = 128<br/>
+— Second layer : input size = 134 and output size = 128<br/>
+— Third layer : input size = 128 and output size = 1<br/>
+<br/>
 
 
 ### Plot of Rewards:
