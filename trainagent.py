@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import torch
 from collections import deque
 
-from ddpg_agent import Agent
+from ccagent import Agent
 
 env = UnityEnvironment(file_name = 'C:/projects/deep-reinforcement-learning/p2_continuous-control/Reacher_Windows_x86_64/Reacher.exe')
 agent = Agent(state_size = 33, action_size = 4, random_seed = 0)
@@ -19,7 +19,7 @@ action_size = brain.vector_action_space_size
 scores = [] 													 # initialize the score 
 scores_window = deque(maxlen = 100) 
                           
-def ddpg(n_episodes = 500, max_t = 1000):
+def ddpgLearn(n_episodes = 500, max_t = 1000):
 	
 	for i_episode in range(1, n_episodes + 1):
 	   	env_info = env.reset(train_mode = True)[brain_name]     
@@ -59,7 +59,7 @@ def ddpg(n_episodes = 500, max_t = 1000):
 
 if __name__ == '__main__':
 
-	ddpg()
+	ddpgLearn()
 
 	fig = plt.figure()
 	ax = fig.add_subplot(111)

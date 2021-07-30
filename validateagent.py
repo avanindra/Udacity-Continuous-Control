@@ -1,13 +1,11 @@
 from unityagents import UnityEnvironment
 import numpy as np
-from collections import deque
-import matplotlib.pyplot as plt
 import torch
 
-from ddpg_agent import Agent
+from ccagent import Agent
 
 
-env = UnityEnvironment(file_name = "Reacher.app")
+env = UnityEnvironment(file_name =  'C:/projects/deep-reinforcement-learning/p2_continuous-control/Reacher_Windows_x86_64/Reacher.exe')
 
 agent = Agent(state_size = 33, action_size = 4, random_seed = 0)
 agent.actor_local.load_state_dict(torch.load('bin/checkpoint_finished.pth', map_location = lambda storage, loc: storage))
