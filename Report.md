@@ -42,16 +42,15 @@ The critic network has following layers:
 
 ### Plot of Rewards:
 
-<img src="cctraining.png"/>
+<img src="trainingplot.png"/>
 
-Saved Model: [ccactormodel.pt](ccactormodel.pt)
+Saved Model: [ccactormodel.pth](actormodel.pth)
 
 
 
 ### Ideas for Future Work:
 
-Using Double DQN and Dueling DQN to improve training.
-Using Prioritized Experience Replay to further improve the training.
+Solving the same problem with D4PG algorithm and comparing it against current implementation.
 
 
 
