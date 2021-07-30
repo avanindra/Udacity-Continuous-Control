@@ -58,3 +58,18 @@ The environment is considered solved if a reward of +100 is obtain for 30 consec
 6. Place the files in this repo in the `p2_continuous_control/` folder. 
 
 7. After above steps you are ready to run the `p2_continuous_control/Continuous_Control.ipynb`
+
+
+### Instructions
+
+There are two ways , one can run the continuous control agent training:<br/>
+
+1. Run Continuous_Control.ipynb ( with zypyter notebook, this is modified version of code supplied with the udacity project assignment. You need to spcify the environment path.)
+2. Run trainagent.py with supplying environment path at commandline.
+
+The programs generate two outputs: 
+1. actormodel.pt , criticmodel.pt ( the network weights for the actor network).
+2. criticmodel.pt (the networks weights for critic network)
+
+We also provide one script to validate the models with validateagent.py , which loads the trained actor and critic models and tests against the environment.
+
