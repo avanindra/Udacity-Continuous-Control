@@ -5,9 +5,9 @@
 
 <img src="env.gif"/>
 
-The goal of this project is to solve the Reacher environment. In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
+The goal of this project is to solve the Reacher environment. In this environment, double-jointed arms can move to target locations. Agent must be able to reach and go along with a moving ball controlling its arms. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
 
-The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm for each arm . There are 20 arms. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 
 The environment is considered solved if a reward of +30 is obtain for 100 consecutive episodes.
 
@@ -48,10 +48,10 @@ The environment is considered solved if a reward of +30 is obtain for 100 consec
 
 5. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
 
-   - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
-   - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
-   - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip)
-   - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
+   - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
+   - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
+   - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
+   - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
 
    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
 
@@ -70,8 +70,6 @@ There are two ways , one can run the continuous control agent training:<br/>
 2. Run trainagent.py with supplying environment path at commandline.
 
 The programs generate two outputs: 
-1. actormodel.pt , criticmodel.pt ( the network weights for the actor network).
-2. criticmodel.pt (the networks weights for critic network)
-
-We also provide one script to validate the models with validateagent.py , which loads the trained actor and critic models and tests against the environment.
+1. actormodel.pth  ( the network weights for the actor network).
+2. criticmodel.pth (the networks weights for critic network)
 

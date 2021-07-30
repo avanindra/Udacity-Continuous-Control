@@ -1,3 +1,4 @@
+import sys
 from unityagents import UnityEnvironment
 import numpy as np
 import matplotlib.pyplot as plt 
@@ -55,7 +56,14 @@ if __name__ == '__main__':
 
 	DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-	env = UnityEnvironment(file_name = 'C:/projects/deep-reinforcement-learning/p2_continuous-control/Reacher_Windows_x86_64/Reacher.exe')
+	file_name='C:/projects/deep-reinforcement-learning/p2_continuous-control/Reacher_Windows_x86_64/Reacher.exe'
+
+	if len(sys.argv) == 2:
+		file_name=sys.argv[1]#
+    #else :
+    #    env = UnityEnvironment(file_name='C:/projects/deep-reinforcement-learning/p2_continuous-control/Reacher_Windows_x86_64/Reacher.exe')
+
+	env = UnityEnvironment(file_name=sys.argv[1])
 
 
 	# get the default brain

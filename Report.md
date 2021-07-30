@@ -52,6 +52,8 @@ Saved Model: [actormodel.pth](actormodel.pth)
 
 Solving the same problem with D4PG algorithm and comparing it against current implementation.
 
+Solving single agent problem with DDPG, ( I did try to implement it , but it appears , it needs lot of hyperparameter tuning to reach to stable convergence.) and  could compare this method to other policy based methods, such as A2C, taking advantage of the parallelisation of different agents.
+
 
 
 
