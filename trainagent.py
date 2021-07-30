@@ -52,8 +52,11 @@ def ddpgLearn(n_episodes = 500, max_t = 1000):
    		if np.mean(scores_window) >= 30.0:
    			print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format
 				(i_episode - 100, np.mean(scores_window)))
-   			torch.save(agent.actor_local.state_dict(), 'checkpoint_finished.pth')
-   			break
+   			torch.save(agent.actor_local.state_dict(), 'actormodel_final.pt')
+   			break    
+		# torch.save(agent.actor_local.state_dict(), 'finalactormodel.pt')
+			# torch.save(agent.critic_local.state_dict(), 'finalcriticmodel.pt')
+			
 
 	return scores
 
@@ -67,5 +70,6 @@ if __name__ == '__main__':
 	plt.title('Progress of the agent over the episodes')
 	plt.ylabel('Score')
 	plt.xlabel('Episode #')
+	plt.savefig('trainingplot.png')
 	plt.show()
 	   	    

@@ -14,10 +14,10 @@ import torch.optim as optim
 
 BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 128       # minibatch size
-GAMMA = 0.9            # discount factor
-TAU = 5e-4              # for soft update of target parameters
-LR_ACTOR = 5e-4        # learning rate of the actor 
-LR_CRITIC = 5e-4       # learning rate of the critic
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR_ACTOR = 1e-4        # learning rate of the actor 
+LR_CRITIC = 1e-4       # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -74,12 +74,12 @@ class Agent():
         with torch.no_grad():
             action = self.actor_local(state).cpu().data.numpy()
         self.actor_local.train()
-        # if add_noise:
-        #     action += self.noise.sample()
+        if add_noise:
+            action += self.noise.sample()
         return np.clip(action, -1, 1)
 
-    # def reset(self):
-    #     self.noise.reset()
+    def reset(self):
+        self.noise.reset()
 
     def learn(self, experiences, gamma):
         """Update policy and value parameters using given batch of experience tuples.
@@ -136,24 +136,24 @@ class Agent():
         for target_param, local_param in zip(target_model.parameters(), local_model.parameters()):
             target_param.data.copy_(tau * local_param.data + (1.0 - tau) * target_param.data)
 
-# class OUNoise:
-#     """Ornstein-Uhlenbeck process."""
+class OUNoise:
+    """Ornstein-Uhlenbeck process."""
 
-#     def __init__(self, size, seed, mu = 0., theta = 0.15, sigma = 0.12):
-#         """Initialize parameters and noise process."""
-#         self.mu = mu * np.ones(size)
-#         self.theta = theta
-#         self.sigma = sigma
-#         self.seed = random.seed(seed)
-#         self.reset()
+    def __init__(self, size, seed, mu = 0., theta = 0.15, sigma = 0.12):
+        """Initialize parameters and noise process."""
+        self.mu = mu * np.ones(size)
+        self.theta = theta
+        self.sigma = sigma
+        self.seed = random.seed(seed)
+        self.reset()
 
-#     def reset(self):
-#         """Reset the internal state (= noise) to mean (mu)."""
-#         self.state = copy.copy(self.mu)
+    def reset(self):
+        """Reset the internal state (= noise) to mean (mu)."""
+        self.state = copy.copy(self.mu)
 
-#     def sample(self):
-#         """Update internal state and return it as a noise sample."""
-#         x = self.state
-#         dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
-#         self.state = x + dx
-#         return self.state
+    def sample(self):
+        """Update internal state and return it as a noise sample."""
+        x = self.state
+        dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
+        self.state = x + dx
+        return self.state
