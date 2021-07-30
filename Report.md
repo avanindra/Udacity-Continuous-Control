@@ -1,6 +1,6 @@
 # Project 2: Continuous Control (Report)
 
-This project train an agent to navigate and collect bananas in a large, square world.
+This project trains 20 agents in parallel for controlling their arms, such that the agents must be able to reach and go along with a moving ball.
 
 
 
@@ -27,15 +27,15 @@ WEIGHT_DECAY = 0        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# L2 wei
 
 The actor netowrk has three layers: 
 <br/>
-— First layer : input size = 33 and output size = 128 <br/>
-— Second layer : input size = 128 and output size = 128<br/>
+— First layer : input size = 33 and output size = 256 <br/>
+— Second layer : input size = 256 and output size = 128<br/>
 — Third layer : input size = 128 and output size = 4<br/>
 <br/>
 
 The critic network has following layers:<br/>
 <br/>
-— First layer : input size = 33 and output size = 128<br/>
-— Second layer : input size = 134 and output size = 128<br/>
+— First layer : input size = 33 and output size = 256<br/>
+— Second layer : input size = 256 + 4 and output size = 128<br/>
 — Third layer : input size = 128 and output size = 1<br/>
 <br/>
 
@@ -44,7 +44,7 @@ The critic network has following layers:<br/>
 
 <img src="trainingplot.png"/>
 
-Saved Model: [ccactormodel.pth](actormodel.pth)
+Saved Model: [actormodel.pth](actormodel.pth)
 
 
 
