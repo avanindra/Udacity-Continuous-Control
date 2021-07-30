@@ -26,18 +26,18 @@ WEIGHT_DECAY = 0        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# L2 wei
 ### Architecture of Neural Network Used:
 
 The actor netowrk has three layers: 
+<br/>
+— First layer : input size = 33 and output size = 128 <br/>
+— Second layer : input size = 128 and output size = 128<br/>
+— Third layer : input size = 128 and output size = 4<br/>
+<br/>
 
-— First layer : input size = 33 and output size = 128
-— Second layer : input size = 128 and output size = 128
-— Third layer : input size = 128 and output size = 4
-
-
-The critic network has following layers:
-
-— First layer : input size = 33 and output size = 128
-— Second layer : input size = 134 and output size = 128
-— Third layer : input size = 128 and output size = 1
-
+The critic network has following layers:<br/>
+<br/>
+— First layer : input size = 33 and output size = 128<br/>
+— Second layer : input size = 134 and output size = 128<br/>
+— Third layer : input size = 128 and output size = 1<br/>
+<br/>
 
 
 ### Plot of Rewards:
