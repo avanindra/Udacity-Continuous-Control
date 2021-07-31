@@ -37,10 +37,14 @@ The critic network has following layers:<br/>
 — First layer : input size = 33 and output size = 256<br/>
 — Second layer : input size = 256 + 4 and output size = 128<br/>
 — Third layer : input size = 128 and output size = 1<br/>
+
+We use ReLU activation functions for both of the networks.
 <br/>
 
 
 ### Plot of Rewards:
+
+In our experiment , the environment is solved in 136 episodes.
 
 <img src="trainingplot.png"/>
 
